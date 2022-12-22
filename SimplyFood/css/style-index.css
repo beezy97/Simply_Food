@@ -1,0 +1,509 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    background-color: #d6d3cd;
+    overflow: hidden;
+    height: 100%;
+}
+
+/* ***************** HEADER / NAV ********************** */
+
+header{
+    width: 100%;
+    height: 14%;
+    border-bottom: 1px solid black ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+header h2{
+    width: 20px;
+    margin-left: 30px;
+}
+
+header h2 a{
+    font-size: 30px;
+    letter-spacing: 8px;
+    text-decoration: none;
+    color: black;
+}
+
+header p{
+    margin-left: 20px;
+    height: 100%;
+    width: 4%;
+    display: flex;
+    align-items: center;
+}
+
+.menu{
+    text-align: center;
+    color: black;
+    font-size: 40px;
+    text-decoration: none;
+}
+
+header nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    z-index: 6;
+}
+
+header nav ul li a{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-family: 'Raleway';
+    font-weight: bold;
+}
+
+nav ul li a::after{
+    content: "";
+    display: block;
+    height: 1px;
+    background: black;
+    transform: scale(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+header nav ul li a:hover::after{
+    transform:scale(1) ;
+}
+
+header nav ul{
+    display: flex;
+    justify-content: space-around;
+}
+
+header nav ul li{
+    list-style-type: none;
+    padding: 0 20px;
+}
+
+
+.button button{
+    padding: 10px 25px;
+    background-color: black;
+    margin-right: 20px;
+    border-radius: 20px;
+}
+
+.button button{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Raleway';
+    font-weight: bold;
+}
+
+.button button:hover{
+    background-color: #B3A0CE;
+    border:2px solid #744fa8;
+    transition: 0.2s;
+    cursor: pointer;
+    scale: 1.05;
+}
+
+.button p{
+    display: none;
+}
+
+@media (max-width : 995px){
+    nav ul li a{
+        font-size: 14px;
+    }
+
+    .button button{
+        padding: 5px 12px;
+    }
+
+    .button{
+        margin-right: 60px;
+    }
+
+    header h2 a{
+        font-size: 18px;
+        letter-spacing: 4px;
+        text-decoration: none;
+        color: black;
+    }
+}
+
+@media (max-width : 835px){
+    header{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+    
+    nav ul p{
+        display: block;
+        font-size: 30px;
+    }
+    
+    nav ul li a{
+        display: none;
+    }
+
+    .button button{
+        display: none;
+    }
+
+    .button p{
+        display: block;
+        font-size: 30px;
+    }
+
+    .button p a{
+        text-decoration: none;
+        color: black;
+    }
+
+    .menu{
+        display: none;
+    }
+}
+
+/* ***************** SCROLLBAR ********************** */
+
+.scrollbar{
+    width: 95%;
+    height: 400px;
+    background-color: #6c6b68;
+    position: absolute;
+    display: none;
+    justify-content: space-between;
+    left: 0;
+    top: 102px;
+}
+
+.scrollbar ul li{
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+.scrollbar ul li a{
+    text-decoration: none;
+    font-size: 17px;
+    color: black;
+}
+
+.scrollbar ul li a:hover{
+    color: #B3A0CE;
+}
+
+.scrollbar .onglet{
+    width: 33%;
+    margin: 20px 40px;
+    border-right: 1px solid black;
+}
+
+/* ***************** SECTION ********************** */
+
+section{
+    width: 100%;
+    height: 86%;
+    display: flex;
+}
+
+section article{
+    width: 58%;
+    height: 100%;
+    border-right: 1px solid black;
+}
+
+section article .bottom{
+    display: flex;
+    justify-content: right;
+}
+
+aside{
+    width: 42%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+aside article{
+    width: 100%;
+}
+
+aside .top{
+    background-color: #B3A0CE;
+    height: 55%;
+}
+
+aside .bottom{
+    display: flex;
+    border-top: 1px solid black;
+    height: 45%;
+}
+
+aside .bottom .left{
+    border-right: 1px solid black;
+}
+
+/* ***************** SECTION CONTENU ********************** */
+
+section article .top h1{
+    font-size: 90px;
+    margin: 50px 50px;
+    font-family: 'Raleway';
+    text-transform: uppercase;
+    max-width: 550px;
+}
+
+section article .top{
+    width: 100%;
+    height: 50%;
+}
+
+section article .bottom{
+    width: 100%;
+    height: 50%;
+}
+
+section article .bottom .box{
+    width: 150px;
+    height: 250px;
+    margin-right: 80px;
+}
+
+section article .box h3{
+    font-size: 15px;
+}
+
+section article .box .box1{
+    width: 120px;
+    height: 200px;
+    border: 2px solid black;
+    box-shadow: 6px 7px 0px -1px #000000;
+}
+
+section article .box .box1 h4{
+    font-weight: bold;
+    font-size: 13px;
+    text-align: center;
+}
+
+section article .box .box1 ul{
+    margin-left: 15px;
+}
+
+section article .box .box1 ul li{
+    list-style: none;
+    font-size: 14px;
+    margin: 16px 0px;
+}
+
+aside .top{
+    display: flex;
+    justify-content: right;
+}
+
+article .right{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+article .left{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+article .right h1{
+    margin-bottom: 20px;
+    font-size: 60px;
+    margin: none;
+}
+
+article .right h2{
+    font-size: 30px;
+    margin: none;
+    letter-spacing: 3px;
+}
+
+.image{
+    margin: 0px 110px;
+}
+
+.carre{
+    width: 160px;
+    height: 70px;
+    background-color: black;
+    margin-top: 30px;
+    border: 2px solid black;
+}
+
+.image a .carre:hover{
+    transform: scale(1.08);
+    cursor: pointer;
+}
+
+.fit{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width : 1250px){
+    article .right h2{
+        text-align: center;
+    }
+}
+
+@media (max-width : 835px){
+    section article .top h1{
+        font-size: 40px;
+    }
+
+    .img{
+        width: 110px;
+        height: 55px;
+    }
+
+    .image{
+        margin: 10px 20px;
+    }
+
+    article .right h1{
+        font-size: 30px;
+    }
+    
+    article .right h2{
+        font-size: 20px;
+        margin-left: 10px;
+        text-align: center;
+    }
+
+    .left nav ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    article .left nav ul li{
+        width: 90%;
+        height: 20px;
+        font-size: 10px;
+        border-radius: 0.2em;
+    }
+}
+
+.left nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.left nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.left nav ul li {
+    color: var(--c);
+    font-size: 16px;
+    border: 0.2em solid var(--c);
+    border-radius: 0.5em;
+    width: 10em;
+    height: 3em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 3em;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+    margin-top: 10px;
+}
+
+.left nav ul li:nth-child(1){
+    --c: #3b5998;
+}
+
+.left nav ul li:nth-child(2){
+    --c: #8a3ab9;
+}
+
+.left nav ul li:nth-child(3){
+    --c: #c8232c ;
+}
+
+.left nav ul li:nth-child(4){
+    --c: #00acee;
+}
+
+.left nav ul li span {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-color: var(--c);
+    transform: translateY(150%);
+    border-radius: 50%;
+    left: calc((var(--n) - 1) * 25%);
+    transition: 0.5s;
+    transition-delay: calc((var(--n) - 1) * 0.1s);
+    z-index: -1;
+}
+
+.left nav ul li:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.left nav ul li:hover span {
+    transform: translateY(0) scale(2);
+}
+
+.left nav ul li span:nth-child(1) {
+    --n: 1;
+}
+
+.left nav ul li span:nth-child(2) {
+    --n: 2;
+}
+
+.left nav ul li span:nth-child(3) {
+    --n: 3;
+}
+
+.left nav ul li span:nth-child(4) {
+    --n: 4;
+}

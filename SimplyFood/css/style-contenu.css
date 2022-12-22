@@ -1,0 +1,546 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    background-color: #d6d3cd;
+    overflow: hidden;
+    height: 100%;
+}
+
+/* ***************** HEADER / NAV ********************** */
+
+header {
+    width: 100%;
+    height: 14%;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+header h2 {
+    width: 20px;
+    margin-left: 30px;
+}
+
+header h2 a {
+    font-size: 30px;
+    letter-spacing: 8px;
+    text-decoration: none;
+    color: black;
+}
+
+header p {
+    margin-left: 20px;
+    height: 100%;
+    width: 4%;
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    text-align: center;
+    color: black;
+    font-size: 40px;
+    text-decoration: none;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    z-index: 9;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-family: 'Raleway';
+    font-weight: bold;
+}
+
+nav ul li a::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background: black;
+    transform: scale(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+nav ul li a:hover::after {
+    transform: scale(1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    list-style-type: none;
+    padding: 0 20px;
+}
+
+.button button {
+    padding: 10px 25px;
+    background-color: black;
+    margin-right: 20px;
+    border-radius: 20px;
+}
+
+.button button{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Raleway';
+    font-weight: bold;
+}
+
+.button button:hover {
+    background-color: #B3A0CE;
+    border: 2px solid #744fa8;
+    transition: 0.2s;
+    cursor: pointer;
+    scale: 1.05;
+}
+
+.button p {
+    display: none;
+}
+
+@media (max-width : 995px) {
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    .button button {
+        padding: 5px 12px;
+    }
+
+    .button {
+        margin-right: 60px;
+    }
+
+    header h2 a {
+        font-size: 18px;
+        letter-spacing: 4px;
+        text-decoration: none;
+        color: black;
+    }
+}
+
+@media (max-width : 835px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    nav ul p {
+        display: block;
+        font-size: 30px;
+    }
+
+    nav ul li a {
+        display: none;
+    }
+
+    .button button {
+        display: none;
+    }
+
+    .button p {
+        display: block;
+        font-size: 30px;
+    }
+
+    .button p a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .menu {
+        display: none;
+    }
+}
+
+/* ***************** SCROLLBAR ********************** */
+
+.scrollbar {
+    width: 95%;
+    height: 400px;
+    background-color: #6c6b68;
+    position: absolute;
+    display: none;
+    justify-content: space-between;
+    left: 0;
+    top: 102px;
+}
+
+.scrollbar ul li {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+.scrollbar ul li a {
+    text-decoration: none;
+    font-size: 17px;
+    color: black;
+}
+
+.scrollbar ul li a:hover {
+    color: #B3A0CE;
+}
+
+.scrollbar .onglet {
+    width: 33%;
+    margin: 20px 40px;
+    border-right: 1px solid black;
+}
+
+/* ***************** SECTION ********************** */
+
+.produit {
+    width: 100%;
+    height: 88%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.produit-category {
+    font-size: 30px;
+    margin-bottom: 40px;
+    text-transform: capitalize;
+    width: 20px;
+}
+
+.produit-container {
+    padding: 10vw 7.5vw;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.produit-container::-webkit-scrollbar {
+    display: none;
+}
+
+.produit-carte {
+    flex: 0 0 auto;
+    width: 250px;
+    height: 450px;
+    margin-right: 40px;
+}
+
+.produit-image {
+    position: relative;
+    width: 100%;
+    height: 350px;
+}
+
+.produit-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.discount-tag {
+    position: absolute;
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    color: #ff7d7d;
+    right: 10px;
+    top: 10px;
+    text-transform: capitalize;
+}
+
+.carte-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    width: 90%;
+    border: none;
+    outline: none;
+    background: #fff;
+    border-radius: 5px;
+    transition: 0.5s;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.produit-carte:hover .carte-btn {
+    opacity: 1;
+}
+
+.carte-btn:hover {
+    background: #ff7d7d;
+    color: #fff;
+}
+
+.produit-info {
+    width: 100%;
+    height: 100px;
+    padding-top: 10px;
+}
+
+.produit-brand {
+    text-transform: uppercase;
+}
+
+.produit-short-description {
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    opacity: 0.5;
+    margin: 5px 0;
+}
+
+.infos {
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.pre-btn,
+.nxt-btn {
+    border: none;
+    width: 5vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 150%);
+    cursor: pointer;
+    z-index: 8;
+}
+
+.pre-btn {
+    left: 0;
+    transform: rotate(180deg);
+}
+
+.nxt-btn {
+    right: 0;
+}
+
+.pre-btn img,
+.nxt-btn img {
+    opacity: 0.2;
+}
+
+.pre-btn:hover img,
+.nxt-btn:hover img {
+    opacity: 1;
+}
+
+footer{
+    background-color: #B3A0CE;
+    color: white;
+    width: 100%;
+    height: 3%;
+    display: flex;
+    justify-content: center;
+}
+
+.produit-image button{
+    border: none;
+    line-height: 20px;
+}
+
+.etapes {
+    position: absolute;
+    background: #fff;
+    padding: 5px 12px;
+    border-radius: 5px;
+    color: #ff7d7d;
+    right: 10px;
+    top: 10px;
+    text-transform: capitalize;
+}
+
+.etapes {
+    text-decoration: none;
+    color: #744fa8;
+}
+
+.etapes a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.popup{
+    background-color: white;
+    width: 80%;
+    height: 80%;
+    border-radius: 30px;
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.popup .infos{
+    height: 100%;
+    width: 35%;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.instructions{
+    height: 100%;
+    width: 65%;
+    border-radius: 30px;
+}
+
+.infos-titre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 85%;
+}
+
+.infos-titre h2{
+    text-transform: uppercase;
+    font-size: 25px;
+    max-width: 70%;
+    text-align: center;
+}
+
+.infos-img{
+    width: 280px;
+    height: 310px;
+    object-fit: cover;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+.prepa{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 15%;
+}
+
+.prepa p{
+    margin: 0px 20px;
+}
+
+.instructions-titre{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.instructions-titre h3{
+    font-size: 25px;
+}
+
+.instructions .ingredients{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+.instructions .consignes{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ingredients ul{
+    width: 95%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #B3A0CE;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.ingredients ul li{
+    list-style-type: none;
+    font-size: 20px;
+    color: white;
+    font-family: 'Raleway';
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.consignes-etapes{
+    width: 90%;
+    height: 95%;
+}
+
+.consignes-etapes p{
+    font-family: 'Raleway';
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.modal, .modal2, .modal3, .modal4, .modal5, 
+.modal6, .modal7, .modal8, .modal9, .modal10 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 22; /* Sit on top */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.close,.close2,.close3,.close4,.close5,
+.close6,.close7,.close8,.close9,.close10 {
+    color: #aaaaaa;
+    margin: 5px 20px;
+    font-size: 50px;
+    font-weight: bold;
+  }
+  
+  .close:hover,.close2:hover,.close3:hover,.close4:hover,.close5:hover,
+  .close6:hover,.close7:hover,.close8:hover,.close9:hover,.close10:hover,
+  .close:focus,.close2:focus,.close3:focus,.close4:focus,.close5:focus,
+  .close6:focus,.close7:focus,.close8:focus,.close9:focus,.close10:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+footer{
+    background-color: #B3A0CE;
+    color: white;
+    width: 100%;
+    height: 3%;
+    display: flex;
+    justify-content: center;
+}
